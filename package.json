@@ -1,6 +1,7 @@
 {
     "name": "@the-w1zard/app_store",
     "version": "1.0.0",
+    "sideEffects": false,
     "type": "module",
     "main": "./dist/index.js",
     "exports": {
@@ -22,6 +23,7 @@
     },
     "dependencies": {
       "@the-w1zard/alias_types": "workspace:*",
-      "@the-w1zard/dx": "workspace:*"
+      "@the-w1zard/dx": "workspace:*",
+      "@the-w1zard/mods": "workspace:*"
     }
   }
