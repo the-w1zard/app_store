@@ -214,6 +214,5 @@ function safeCall(fn, ...args) {
         process.emitWarning(e);
     }
 }
-module.exports = new Store();
-module.exports.Store = Store;
-export {};
+export { Store };
+export default new Store();
