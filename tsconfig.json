@@ -18,8 +18,8 @@
      "@the-w1zard/dx",
      "@the-w1zard/alias_types"
     ]
-  },
-  "include": [
+  }, 
+		"include": [
     "**/*.ts"
  ],
   "exclude": ["node_modules", "dist"]

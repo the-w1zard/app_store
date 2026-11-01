@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>APP STORE</title>
+            <title>Table of Contents</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -140,321 +140,653 @@
         </head>
         <body class="vscode-body vscode-dark">
             <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
-				<h1 id="app-store">APP STORE</h1>
-<p>A lightweight, in-memory reactive store for Node.js with keyed subscriptions, global change listeners, async iteration, TTL expiration, promise-based waiting, and basic state management.</p>
-<p>The store is implemented as a singleton instance, with the <code>Store</code> class also exported for creating independent instances.</p>
+				<div align="left" style="position: relative;">
+<img src="file:///f:\the_wizard_mods\packages\app_store\icons\gandalf.png" align="right" width="30%" style="margin: -20px 0 0 20px;">
+<h1>Store: <span style="font-size:18px;" >The Wizard's Arsenal</span></h1>
+<p align="left"><em>The most opinionated platform... ever.</em></p>
+<p align="left"><em>Trust me... I'm a fucking wizard... 🧙</em></p>
+<p align="left">VSCode ext:</p>
+<p align="left">
+<img src="https://img.shields.io/badge/THEMES- 251-95ED27?style=flat">
+<img src="https://img.shields.io/badge/SIDEBARS- 160+-95ED27?style=flat">
+<img src="https://img.shields.io/badge/PRODUCT ICONS- 651-95ED27?style=flat">
+<img src="https://img.shields.io/badge/FILE ICONS- 454-95ED27?style=flat">
+<img src="https://img.shields.io/badge/VSCode Extentions- 82+-95ED27?style=flat">
+<img src="https://img.shields.io/badge/FEATURES- SHIT TONNE-95ED27?style=flat">
+</p>
+<p align="left">Small but powerful repos worth checking out:</p>
+<p align="left">
+<p><a href="https://github.com/the-w1zard/app_store"><img src="https://img.shields.io/badge/Store / Maelstrom-000000.svg?style=flat&logo=JetBrains&logoColor=white" alt="JetBrains"></a>
+<a href="https://github.com/the-w1zard/dx"><img src="https://img.shields.io/badge/UX /DX-34A853.svg?style=flat&logo=Android&logoColor=white" alt="Android"></a>
+<a href="https://github.com/the-w1zard/temporal_shift"><img src="https://img.shields.io/badge/Temporal Shift-77AA99.svg?style=flat&logo=Org&logoColor=white" alt="Org"></a>
+<a href="https://github.com/the-w1zard/the_cloud"><img src="https://img.shields.io/badge/The Cloud-02303A.svg?style=flat&logo=Gradle&logoColor=white" alt="Gradle"></a>
+<a href="https://github.com/the-w1zard/signals"><img src="https://img.shields.io/badge/Signals-02303A.svg?style=flat&logo=Gradle&logoColor=white" alt="Gradle"></a>
+<img src="https://img.shields.io/badge/Sometimes, my genius... It generates gravity.-4285F4.svg?style=flat&logo=🧙&logoColor=white" alt="Google">
+<a href="https://github.com/the-w1zard"><img src="https://img.shields.io/badge/Coming Soon: The Wizard Platform-7F52FF.svg?style=flat&logo=Kotlin&logoColor=white" alt="Kotlin"></a>
+<a href="https://github.com/the-w1zard"><img src="https://img.shields.io/badge/Coming Soon: Hadron Particle Disruptor-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white" alt="java"></a></p>
+</p>
+<p align="left">The goal? To remove all friction, from everything.</p>
+</div>
+<br clear="right">
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="-the_wizard">🔗 [THE_WIZARD]</h3>
+<ul>
+<li>I. <a href="#-tldr">🧙 TLDR</a></li>
+<li>II. <a href="#-features">🔮 Features</a></li>
+<li>III. <a href="#-store">🧙 Store</a></li>
+<li>IV. <a href="#-scoped-state">🔮 Scoped State</a></li>
+<li>V. <a href="#-rifts">🧙 Rifts</a></li>
+<li>VI. <a href="#-readiness-waiters">🔮 Waiters</a></li>
+<li>VII. <a href="#-deferred-tasks">🧙 Defer</a></li>
+<li>VII. <a href="#-module-resolution">🔮 Modules</a></li>
+<li>VII. <a href="#-apparations-and-safe-fallbacks">🧙 Apparation</a></li>
+<li>VII. <a href="#-usage-quick-reference-sheet">🔮 Usage: Quick Reference</a></li>
+<li>VII. <a href="#-usage-quick-reference-sheet">🧙 Usage: Maelstrom Cheat sheet</a></li>
+</ul>
+<hr>
+<span  style="font-family: monospace"> 
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>TLDR</p><p></p>
+<p>This is the combination of several solutions but created so that, each are still their own individual thing but accessible through a single source where it can be shared across several different node modules. Each solution solves a different problem, while at the same having an extremely small foot print. In addition to that, each of the solution was created ontop of the foundation of the new and extended functions from the dx package, where their functionality was leveraged which helped in keeping the overall package size small.</p>
+<p>You will find amongst the collective:</p>
+<ul>
+<li>Store</li>
+<li>State</li>
+<li>modules:
+<ul>
+<li>defer</li>
+<li>waiter</li>
+<li>conjure</li>
+<li>conjure named exports</li>
+<li>conjure cached and uncached</li>
+</ul>
+</li>
+</ul>
+</div>
+</span>
+<p>A single in-process module for keyed storage, scoped state, readiness signals, module resolution, and dependency-based task scheduling.</p>
+<p>It exports a <code>Store</code> class for independent instances and a default, ready-to-use store:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">import</span> store, { <span class="hljs-title class_">Store</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./store.js&quot;</span>;
+
+<span class="hljs-keyword">const</span> isolatedStore = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Store</span>();
+</code></pre>
 <h2 id="features">Features</h2>
 <ul>
-<li><strong>Key-value storage</strong> — Store and retrieve values using <code>set()</code>, <code>get()</code>, and <code>has()</code>.</li>
-<li><strong>Keyed subscriptions</strong> — Listen for changes to a specific key.</li>
-<li><strong>Global subscriptions</strong> — Listen for changes across all keys.</li>
-<li><strong>Async iteration</strong> — Consume updates through <code>for await...of</code>.</li>
-<li><strong>Promise-based waiting</strong> — Wait for a key to satisfy a predicate, change, or receive a value.</li>
-<li><strong>TTL expiration</strong> — Automatically delete values after a specified duration.</li>
-<li><strong>AbortSignal support</strong> — Cancel pending waits using an abort signal.</li>
-<li><strong>Timeout support</strong> — Reject waits that exceed a specified duration.</li>
-<li><strong>Immediate subscriptions</strong> — Receive the current value when subscribing, if one exists.</li>
-<li><strong>Freeze support</strong> — Prevent further writes through <code>set()</code>.</li>
-<li><strong>Safe subscriber execution</strong> — Subscriber exceptions are converted into process warnings rather than interrupting notification of other subscribers.</li>
-<li><strong>EventEmitter integration</strong> — Emit a <code>change</code> event for store updates.</li>
+<li>Reactive keyed store with subscriptions, async iteration, waiters, and update helpers</li>
+<li>Hierarchical state scopes with notification scheduling and persistence markers</li>
+<li>Rift registry for values that may become available later</li>
+<li>Module loading, optional imports, named-export lookup, and environment detection</li>
+<li>Readiness waiters and deferred tasks that run when their dependencies are provided</li>
+<li>Safe placeholder factories and structured logging</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>Save the implementation as <code>store.js</code> and import it into your application.</p>
-<pre><code>const store = require('./store');
-</code></pre>
-<p>The default export is a shared store instance. The <code>Store</code> class is also available for creating independent stores.</p>
-<pre><code>const { Store } = require('./store');
+<h2 id="store">Store</h2>
+<h3 id="read-and-write">Read and write</h3>
+<pre><code class="language-ts">store.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;user&quot;</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alice&quot;</span> });
 
-const store = new Store();
+store.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;user&quot;</span>);                    <span class="hljs-comment">// { name: &quot;Alice&quot; }</span>
+store.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;missing&quot;</span>, <span class="hljs-string">&quot;fallback&quot;</span>);     <span class="hljs-comment">// &quot;fallback&quot;</span>
+store.<span class="hljs-title function_">has</span>(<span class="hljs-string">&quot;user&quot;</span>);                    <span class="hljs-comment">// true</span>
+
+store.<span class="hljs-title function_">setLazy</span>(<span class="hljs-string">&quot;session&quot;</span>, <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">createSession</span>());
+store.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;user&quot;</span>);
+store.<span class="hljs-title function_">clear</span>();
 </code></pre>
-<h2 id="api">API</h2>
-<h3 id="setkey-value-options"><code>set(key, value, options?)</code></h3>
-<p>Store a value under a key.</p>
-<pre><code>store.set('user', 'Alice');
-store.set('count', 1);
-</code></pre>
-<p>An optional <code>ttl</code> specifies the number of milliseconds before the key is automatically deleted.</p>
-<pre><code>store.set('token', 'abc123', { ttl: 60_000 });
-</code></pre>
-<p>When the TTL expires, the key is deleted and subscribers are notified.</p>
-<p>Returns the store instance, allowing chained writes.</p>
-<pre><code>store
-  .set('user', 'Alice')
-  .set('role', 'admin');
-</code></pre>
-<p>Throws an error if the store has been frozen.</p>
-<h3 id="getkey-fallback"><code>get(key, fallback?)</code></h3>
-<p>Retrieve a stored value.</p>
-<pre><code>store.get('user');
-store.get('missing');
-store.get('missing', 'Guest');
-</code></pre>
-<p>Returns <code>undefined</code> when the key does not exist and no fallback is provided. If a fallback is supplied, it is returned when the key is missing.</p>
-<p>The fallback does not create or store the value.</p>
-<h3 id="haskey"><code>has(key)</code></h3>
-<p>Check whether a key exists.</p>
-<pre><code>store.has('user'); // true or false
-</code></pre>
-<p>This checks key existence rather than value truthiness, so a stored <code>undefined</code> value can still have an existing key.</p>
-<h3 id="deletekey"><code>delete(key)</code></h3>
-<p>Delete a key and notify subscribers.</p>
-<pre><code>store.delete('user');
-</code></pre>
-<p>Returns <code>true</code> if the key existed and was deleted, or <code>false</code> if it did not exist.</p>
-<p>Deleting a key also clears its associated TTL timer.</p>
-<h3 id="clear"><code>clear()</code></h3>
-<p>Delete all stored values and notify subscribers for each existing key.</p>
-<pre><code>store.clear();
-</code></pre>
-<p>Clears associated TTL timers as well.</p>
-<h3 id="subscribe"><code>subscribe()</code></h3>
-<p>Subscribe to changes using one of three supported forms.</p>
-<h4 id="key-specific-callback">Key-specific callback</h4>
-<pre><code>const unsub = store.subscribe('user', (value, prev, key) =&gt; {
-  console.log(`${key}:`, prev, '-&gt;', value);
+<p><code>set()</code> returns the store instance. <code>setLazy()</code> evaluates and stores its factory result each time it is called. <code>getAll()</code> returns a clone of the stored data.</p>
+<h3 id="subscribe-to-changes">Subscribe to changes</h3>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> unsubscribe = store.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-function">(<span class="hljs-params">value, previous, key</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${key}</span>:`</span>, previous, <span class="hljs-string">&quot;→&quot;</span>, value);
 });
 
-store.set('user', 'Alice');
-store.set('other', 1); // Does not trigger this subscription.
-
-unsub();
+store.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;user&quot;</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alice&quot;</span> });
+<span class="hljs-title function_">unsubscribe</span>();
 </code></pre>
-<p>The callback receives:</p>
-<table>
-<thead>
-<tr>
-<th>Argument</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>value</code></td>
-<td>New value, or <code>undefined</code> when deleted</td>
-</tr>
-<tr>
-<td><code>prev</code></td>
-<td>Previous value</td>
-</tr>
-<tr>
-<td><code>key</code></td>
-<td>Changed key</td>
-</tr>
-</tbody>
-</table>
-<p>Returns an unsubscribe function.</p>
-<h4 id="global-callback">Global callback</h4>
-<pre><code>const unsub = store.subscribe((value, prev, key) =&gt; {
-  console.log('Changed:', key, prev, '-&gt;', value);
+<p>Subscribe to all keys:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> unsubscribe = store.<span class="hljs-title function_">subscribe</span>(<span class="hljs-function">(<span class="hljs-params">value, previous, key</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Changed:&quot;</span>, key, value);
+});
+</code></pre>
+<p>Request an immediate callback when a key already has a value:</p>
+<pre><code class="language-ts">store.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&quot;user&quot;</span>, onUserChange, { <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> });
+</code></pre>
+<p>Or consume updates as an async iterator:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> store.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&quot;token&quot;</span>, { <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> })) {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">refreshWith</span>(value);
+  <span class="hljs-keyword">if</span> (value === <span class="hljs-string">&quot;stop&quot;</span>) <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<p>Leaving the <code>for await</code> loop closes the iterator and removes its subscriptions.</p>
+<h3 id="wait-for-values">Wait for values</h3>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> store.<span class="hljs-title function_">wait</span>(<span class="hljs-string">&quot;user&quot;</span>);
+
+<span class="hljs-keyword">const</span> config = <span class="hljs-keyword">await</span> store.<span class="hljs-title function_">wait</span>(<span class="hljs-string">&quot;config&quot;</span>, {
+  <span class="hljs-attr">predicate</span>: <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value?.<span class="hljs-property">ready</span> === <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">timeout</span>: <span class="hljs-number">5_000</span>,
+  <span class="hljs-attr">signal</span>: abortController.<span class="hljs-property">signal</span>,
 });
 
-store.set('user', 'Alice');
-store.set('count', 1);
-
-unsub();
+<span class="hljs-keyword">await</span> store.<span class="hljs-title function_">waitChange</span>(<span class="hljs-string">&quot;user&quot;</span>); <span class="hljs-comment">// Ignore the current value</span>
+<span class="hljs-keyword">await</span> store.<span class="hljs-title function_">waitFor</span>(<span class="hljs-string">&quot;count&quot;</span>, <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value &gt;= <span class="hljs-number">10</span>);
 </code></pre>
-<p>A global subscription receives changes for every key.</p>
-<h4 id="immediate-callback-subscription">Immediate callback subscription</h4>
-<pre><code>const unsub = store.subscribe(
-  'user',
-  (value, prev, key) =&gt; {
-    console.log(value);
-  },
-  { immediate: true }
+<p><code>wait()</code> resolves immediately if the key already exists and satisfies its predicate. A timeout rejects with a <code>TimeoutError</code>; an aborted signal rejects with an <code>AbortError</code>.</p>
+<h3 id="update-helpers">Update helpers</h3>
+<pre><code class="language-ts">store.<span class="hljs-title function_">setIfAbsent</span>(<span class="hljs-string">&quot;user&quot;</span>, user);
+store.<span class="hljs-title function_">setIfPresent</span>(<span class="hljs-string">&quot;user&quot;</span>, updatedUser);
+store.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&quot;user&quot;</span>, updatedUser); <span class="hljs-comment">// Alias for setIfPresent</span>
+
+store.<span class="hljs-title function_">update</span>(<span class="hljs-string">&quot;count&quot;</span>, <span class="hljs-function">(<span class="hljs-params">old</span>) =&gt;</span> (old ?? <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+store.<span class="hljs-title function_">inc</span>(<span class="hljs-string">&quot;count&quot;</span>, <span class="hljs-number">1</span>);
+store.<span class="hljs-title function_">touch</span>(<span class="hljs-string">&quot;pendingKey&quot;</span>);
+</code></pre>
+<p><code>setIfAbsent()</code>, <code>setIfPresent()</code>, <code>replace()</code>, and <code>touch()</code> indicate whether the operation changed the store. <code>touch()</code> creates a key with value <code>undefined</code> if it does not already exist.</p>
+<h3 id="inspect-and-transform">Inspect and transform</h3>
+<pre><code class="language-ts">store.<span class="hljs-title function_">toJSON</span>();
+store.<span class="hljs-title function_">entries</span>();
+store.<span class="hljs-title function_">keys</span>();
+store.<span class="hljs-title function_">values</span>();
+store.<span class="hljs-title function_">snapshot</span>();
+
+store.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value?.<span class="hljs-property">active</span>);
+store.<span class="hljs-title function_">findKey</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value?.<span class="hljs-property">active</span>);
+store.<span class="hljs-title function_">group</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value.<span class="hljs-property">type</span>);
+store.<span class="hljs-title function_">pick</span>([<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;config&quot;</span>]);
+store.<span class="hljs-title function_">omit</span>([<span class="hljs-string">&quot;secret&quot;</span>]);
+store.<span class="hljs-title function_">equals</span>(otherStore);
+store.<span class="hljs-title function_">snapshotSubs</span>();
+</code></pre>
+<p><code>freeze()</code> prevents subsequent <code>set()</code> calls. In the provided implementation, it is not shown guarding every mutation method, so it should not be treated as a universal read-only mode.</p>
+<h2 id="scoped-state">Scoped state</h2>
+<p><code>store.state</code> organizes values by root, master, slave, then key. Default channel names are exposed as <code>store.r</code>, <code>store.m</code>, and <code>store.s</code>.</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> scope = {
+  <span class="hljs-attr">globalKey</span>: <span class="hljs-string">&quot;app&quot;</span>,
+  <span class="hljs-attr">ms_reg</span>: <span class="hljs-string">&quot;main&quot;</span>,
+  <span class="hljs-attr">sl_reg</span>: <span class="hljs-string">&quot;settings&quot;</span>,
+};
+
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;theme&quot;</span>, <span class="hljs-string">&quot;dark&quot;</span>, scope);
+<span class="hljs-keyword">const</span> theme = store.<span class="hljs-property">state</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;theme&quot;</span>, scope);
+</code></pre>
+<p>Common methods:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">state</span>.<span class="hljs-title function_">getMap</span>();
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">getMetadata</span>();
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;theme&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;theme&quot;</span>, <span class="hljs-string">&quot;dark&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&quot;theme&quot;</span>, <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value));
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">has</span>(<span class="hljs-string">&quot;theme&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">entries</span>();
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;theme&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">clear</span>();
+</code></pre>
+<p>State writes support options including <code>triggerRender</code> and a history <code>cap</code>. Notifications are scheduled through the store’s notification pipeline.</p>
+<p>Persistence helpers mark keys for the module’s persistence mechanism:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">state</span>.<span class="hljs-title function_">persist</span>(<span class="hljs-string">&quot;theme&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">unpersist</span>(<span class="hljs-string">&quot;theme&quot;</span>);
+store.<span class="hljs-property">state</span>.<span class="hljs-title function_">clearPersistent</span>();
+</code></pre>
+<p>These helpers manage in-memory persistence maps; external storage behavior is not shown in the provided implementation.</p>
+<h2 id="rifts">Rifts</h2>
+<p>A Rift is a named slot that can be opened with a value. Consumers can subscribe or wait for it:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> ready = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">rift</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+
+ready.<span class="hljs-title function_">onOpen</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Service is ready:&quot;</span>, value);
+});
+
+ready.<span class="hljs-title function_">open</span>({ <span class="hljs-attr">connected</span>: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">const</span> service = <span class="hljs-keyword">await</span> ready.<span class="hljs-title function_">wait</span>();
+</code></pre>
+<p><code>wait()</code> waits indefinitely by default. Pass a timeout in milliseconds to reject if the Rift is not opened in time:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">await</span> ready.<span class="hljs-title function_">wait</span>(<span class="hljs-number">5_000</span>);
+</code></pre>
+<p>Retrieve and inspect registry entries:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">rift</span>(<span class="hljs-string">&quot;service.ready&quot;</span>); <span class="hljs-comment">// Retrieve or create</span>
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">has</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">inspect</span>();
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">read</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">reset</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">clear</span>();
+</code></pre>
+<p>Create a standalone Rift with <code>store.maelstrom.rift.make()</code>.</p>
+<h2 id="readiness-waiters">Readiness waiters</h2>
+<p>Register a callback for one signal or for several signals. Multi-signal waiters run once all listed Rifts have opened:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">waiter</span>(<span class="hljs-string">&quot;auth&quot;</span>, <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Auth is ready:&quot;</span>, value);
+});
+
+<span class="hljs-keyword">const</span> waiterId = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">waiter</span>([<span class="hljs-string">&quot;auth&quot;</span>, <span class="hljs-string">&quot;config&quot;</span>], <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Auth and config are ready&quot;</span>);
+});
+
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">waiter</span>.<span class="hljs-title function_">cancel</span>(waiterId);
+</code></pre>
+<p>If a single Rift is already open, its callback runs immediately. For a multi-signal waiter, already-open dependencies count as ready.</p>
+<p>To get a promise for a Rift:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">await</span> store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">waiter</span>.<span class="hljs-title function_">wait_and_promise</span>(
+  <span class="hljs-number">5_000</span>,
+  <span class="hljs-string">&quot;service.ready&quot;</span>,
+  <span class="hljs-literal">false</span>, <span class="hljs-comment">// isOpen</span>
+  <span class="hljs-literal">undefined</span>, <span class="hljs-comment">// current value</span>
 );
 </code></pre>
-<p>When the key already exists, its current value is delivered asynchronously through <code>queueMicrotask()</code>. The previous value is <code>undefined</code>.</p>
-<p>If the key does not exist when subscribing, no initial callback is scheduled.</p>
-<h3 id="async-iterator-subscription">Async iterator subscription</h3>
-<p>Subscribe to a key and consume its updates using <code>for await...of</code>.</p>
-<pre><code>for await (const value of store.subscribe('token')) {
-  await refreshWith(value);
-
-  if (value === 'stop') break;
-}
-</code></pre>
-<p>The iterator yields new values as the key changes. Breaking out of the loop triggers cleanup through the generator's <code>finally</code> block.</p>
-<p>To receive the current value before subsequent updates, enable <code>immediate</code>:</p>
-<pre><code>for await (const value of store.subscribe('token', {
-  immediate: true
-})) {
-  await refreshWith(value);
-
-  if (value === 'stop') break;
-}
-</code></pre>
-<p>The initial value is yielded only if the key exists when the iterator begins execution.</p>
-<p>The iterator buffers updates so that multiple changes can accumulate while the consumer is processing an earlier value.</p>
-<h3 id="waitkey-options"><code>wait(key, options?)</code></h3>
-<p>Wait for a key to satisfy a condition and return a promise that resolves with its value.</p>
-<pre><code>const value = await store.wait('token');
-</code></pre>
-<p>By default, <code>wait()</code> resolves immediately if the key already exists. Otherwise, it waits for a matching change.</p>
-<p>Options:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>predicate(value, prev)</code></td>
-<td>Determines whether a value satisfies the wait condition</td>
-</tr>
-<tr>
-<td><code>timeout</code></td>
-<td>Maximum wait duration in milliseconds</td>
-</tr>
-<tr>
-<td><code>immediate</code></td>
-<td>Check the current value before waiting; defaults to <code>true</code></td>
-</tr>
-<tr>
-<td><code>signal</code></td>
-<td>An <code>AbortSignal</code> that can cancel the wait</td>
-</tr>
-</tbody>
-</table>
-<h4 id="wait-for-a-matching-value">Wait for a matching value</h4>
-<pre><code>const count = await store.wait('count', {
-  predicate: value =&gt; value &gt;= 10
-});
-</code></pre>
-<p>The promise resolves when the predicate passes.</p>
-<h4 id="wait-with-a-timeout">Wait with a timeout</h4>
-<pre><code>try {
-  const token = await store.wait('token', {
-    timeout: 5000
-  });
-} catch (error) {
-  if (error.name === 'TimeoutError') {
-    console.log('Wait timed out');
-  }
-}
-</code></pre>
-<p>The timeout rejects the promise with a <code>TimeoutError</code>.</p>
-<h4 id="cancel-a-wait">Cancel a wait</h4>
-<pre><code>const controller = new AbortController();
-
-const pending = store.wait('token', {
-  signal: controller.signal
+<p>The helper subscribes before checking the supplied <code>isOpen</code> state to avoid missing an opening between those steps. Pass the Rift’s current <code>isOpen</code> and <code>current</code> values.</p>
+<h2 id="deferred-tasks">Deferred tasks</h2>
+<p>Deferred tasks run when all their dependencies have open Rifts. Dependency values are passed to the callback in the same order as the dependency list.</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">defer</span>([<span class="hljs-string">&quot;cache&quot;</span>, <span class="hljs-string">&quot;logger&quot;</span>], <span class="hljs-function">(<span class="hljs-params">cache, logger</span>) =&gt;</span> {
+  <span class="hljs-title function_">startService</span>(cache, logger);
 });
 
-controller.abort();
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">provide</span>(<span class="hljs-string">&quot;cache&quot;</span>, cacheInstance);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">provide</span>({ <span class="hljs-attr">logger</span>: loggerInstance });
+</code></pre>
+<p>A dependency can also be resolved without a value:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;service.ready&quot;</span>);
+</code></pre>
+<p>Inspect, cancel, or clear tasks:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> taskId = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">defer</span>(<span class="hljs-string">&quot;database&quot;</span>, initializeDatabase);
 
-try {
-  await pending;
-} catch (error) {
-  if (error.name === 'AbortError') {
-    console.log('Wait cancelled');
-  }
-}
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">cancel</span>(taskId);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">inspect</span>();
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">clear</span>();
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">defer</span>.<span class="hljs-title function_">drain</span>();
 </code></pre>
-<p>Aborting a pending wait rejects it with an <code>AbortError</code> and cleans up its registered waiter and associated listeners.</p>
-<h3 id="waitchangekey-options"><code>waitChange(key, options?)</code></h3>
-<p>Wait for a subsequent change, ignoring the current value.</p>
-<pre><code>const nextValue = await store.waitChange('status');
+<p><code>defer.invalidate(key)</code> deletes the dependency Rift; <code>defer.has(key)</code> checks whether it is open, and <code>defer.get(key)</code> returns its current value.</p>
+<p>Task statistics include registered, executed, completed, failed, and cancelled counts. Tasks that return promises are tracked until they settle. Failures are logged through <code>defer.onError()</code>; successful completions are reported through <code>defer.onSuccess()</code>.</p>
+<h2 id="module-resolution">Module resolution</h2>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> <span class="hljs-keyword">namespace</span> = await store.maelstrom.module(&quot;./module.js&quot;);
+const resolvedKey = store.maelstrom.key_for(&quot;./module.js&quot;);
+
+store.maelstrom.module.isLoaded(&quot;./module.js&quot;);
+store.maelstrom.module.getLoaded(&quot;./module.js&quot;);
+
+const fs = store.maelstrom.module.require(&quot;node:fs&quot;);
 </code></pre>
-<p>Accepts the same options as <code>wait()</code>, except that <code>immediate</code> is forced to <code>false</code>.</p>
-<h3 id="waitforkey-predicate-options"><code>waitFor(key, predicate, options?)</code></h3>
-<p>A convenience method for waiting until a predicate passes.</p>
-<pre><code>const ready = await store.waitFor(
-  'status',
-  value =&gt; value === 'ready',
-  { timeout: 10_000 }
+<p><code>module()</code> tries available synchronous resolution paths before falling back to dynamic import, so its result may be a value or a promise. <code>module.require()</code> returns <code>undefined</code> when <code>require</code> is unavailable.</p>
+<p>Look up or check exports:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> exported = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">module</span>.<span class="hljs-title function_">export_of</span>(<span class="hljs-string">&quot;createClient&quot;</span>);
+<span class="hljs-keyword">const</span> fromModule = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">module</span>.<span class="hljs-title function_">export_of</span>(<span class="hljs-string">&quot;createClient&quot;</span>, <span class="hljs-string">&quot;./client.js&quot;</span>);
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">namespace</span> = await store.maelstrom.module(&quot;some-package&quot;);
+const named = store.maelstrom.module.extract_named(<span class="hljs-keyword">namespace</span>, &quot;createClient&quot;);
+
+const exists = await store.maelstrom.module.check(&quot;optional-package&quot;);
+</code></pre>
+<p>Calling <code>export_of()</code> without a module specifier throws if more than one loaded module provides the requested export.</p>
+<h3 id="optional-imports">Optional imports</h3>
+<p><code>probe()</code> starts a named-export import in the background and returns the fallback immediately. Later calls with the same label return the resolved export or fallback:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> client = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">probe</span>(
+  <span class="hljs-string">&quot;optional.client&quot;</span>,
+  <span class="hljs-string">&quot;./optional-client.js&quot;</span>,
+  <span class="hljs-string">&quot;client&quot;</span>,
+  fallbackClient,
 );
 </code></pre>
-<p>Accepts the same options as <code>wait()</code>, with the predicate supplied as the second argument.</p>
-<h3 id="tojson"><code>toJSON()</code></h3>
-<p>Return a plain object containing the store's current entries.</p>
-<pre><code>const snapshot = store.toJSON();
-</code></pre>
-<p>Useful for inspection, serialization, and creating snapshots of the current state.</p>
-<p>Only the stored entries are included; subscriptions, timers, waiters, and other internal state are excluded.</p>
-<h3 id="freeze"><code>freeze()</code></h3>
-<p>Prevent future calls to <code>set()</code>.</p>
-<pre><code>store.freeze();
-
-store.set('user', 'Alice'); // Throws: Store is frozen
-</code></pre>
-<p>Freezing does not prevent reads, subscriptions, deletions, or clearing the store. It is a write guard for <code>set()</code>, not a complete immutable-state mechanism.</p>
-<h2 id="change-notifications">Change notifications</h2>
-<p>Successful writes and deletions notify matching subscribers and emit a <code>change</code> event.</p>
-<pre><code>store.on('change', ({ key, value, prev }) =&gt; {
-  console.log(key, prev, '-&gt;', value);
+<p>Use distinct labels for distinct values.</p>
+<p>For more configurable imports, use <code>rift.conjure()</code>:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> result = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">conjure</span>({
+  <span class="hljs-attr">moduleName</span>: <span class="hljs-string">&quot;optional-package&quot;</span>,
+  <span class="hljs-attr">fallback</span>: <span class="hljs-function">() =&gt;</span> fallbackValue,
+  <span class="hljs-attr">cache</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">preferRequire</span>: <span class="hljs-literal">false</span>,
 });
 </code></pre>
-<p>The event payload contains:</p>
+<p>Options include a fallback value or factory, caching, <code>preferRequire</code>, an <code>importPromise</code>, a forced value, and environment-specific candidates. The exact resolution path can be synchronous or asynchronous.</p>
+<h2 id="environment-detection">Environment detection</h2>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">detect</span>.<span class="hljs-title function_">capability</span>(<span class="hljs-string">&quot;shared_worker&quot;</span>);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">detect</span>.<span class="hljs-title function_">bundler</span>();
+
+<span class="hljs-keyword">const</span> first = <span class="hljs-keyword">await</span> store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">detect</span>.<span class="hljs-title function_">firstMatch</span>([<span class="hljs-string">&quot;vitest&quot;</span>, <span class="hljs-string">&quot;jest&quot;</span>]);
+<span class="hljs-keyword">const</span> all = <span class="hljs-keyword">await</span> store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">detect</span>.<span class="hljs-title function_">all</span>([<span class="hljs-string">&quot;vite&quot;</span>, <span class="hljs-string">&quot;rollup&quot;</span>]);
+
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">detect</span>.<span class="hljs-title function_">environment</span>();
+<span class="hljs-keyword">const</span> env = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">useEnvState</span>();
+</code></pre>
+<p><code>detect.environment()</code> starts asynchronous detection and records its result when complete. <code>useEnvState()</code> returns the current state; if detection has not completed, it warns once and returns defaults.</p>
+<p>The value returned by <code>detect.type(value)</code> classifies common values such as thenables, async iterables, arrays, maps, sets, dates, errors, and primitives.</p>
+<h2 id="apparations-and-safe-fallbacks">Apparations and safe fallbacks</h2>
+<p>Apparations are placeholders for common types:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> emptyList = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">apparation</span>.<span class="hljs-property">array</span>&lt;<span class="hljs-built_in">string</span>&gt;();
+<span class="hljs-keyword">const</span> emptyMap = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">apparation</span>.<span class="hljs-property">map</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;();
+<span class="hljs-keyword">const</span> placeholder = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">apparation</span>.<span class="hljs-property">object</span>&lt;<span class="hljs-title class_">MyType</span>&gt;();
+<span class="hljs-keyword">const</span> noop = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">apparation</span>.<span class="hljs-property">func</span>&lt;<span class="hljs-title class_">MyType</span>&gt;();
+</code></pre>
+<p>For optional module access, Maelstrom also provides a safe proxy:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> safeFallback = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">createSafeProxy</span>();
+</code></pre>
+<p>The proxy suppresses many missing-module property, call, and construction errors. It is a fallback—not a replacement for validating required dependencies or their behavior.</p>
+<h2 id="results-logging-and-reset">Results, logging, and reset</h2>
+<p>Maelstrom records resolution outcomes on Rift entries:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">record</span>(<span class="hljs-string">&quot;service&quot;</span>, <span class="hljs-string">&quot;manual&quot;</span>, service);
+
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">results</span>;
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">size</span>;
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">result</span>(<span class="hljs-string">&quot;service&quot;</span>);
+store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">resultsFrom</span>(<span class="hljs-string">&quot;manual&quot;</span>);
+
+<span class="hljs-keyword">const</span> unsubscribe = store.<span class="hljs-property">maelstrom</span>.<span class="hljs-property">rift</span>.<span class="hljs-title function_">onResult</span>(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+});
+</code></pre>
+<p>Log a Maelstrom event:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;MODULE&quot;</span>, { <span class="hljs-attr">module</span>: <span class="hljs-string">&quot;optional-package&quot;</span> }, <span class="hljs-string">&quot;info&quot;</span>);
+</code></pre>
+<p>Log levels are <code>info</code>, <code>success</code>, <code>warn</code>, and <code>error</code>.</p>
+<p>Reset Maelstrom registries, deferred tasks, statistics, and environment state:</p>
+<pre><code class="language-ts">store.<span class="hljs-property">maelstrom</span>.<span class="hljs-title function_">reset</span>();
+</code></pre>
+<p>Resetting clears Maelstrom’s coordination state; it does not imply that the ordinary Store data or scoped state is cleared.</p>
+<h2 id="usage-quick-reference-sheet">Usage Quick Reference Sheet</h2>
+<pre><code class="language-tsx"><span class="hljs-comment">/*  ==========================================================================================================================
+     SET / GET
+     Store a value                                                                                   Store.set(&quot;user&quot;, user)
+     Store a lazily-created value                                                  Store.setLazy(&quot;user&quot;, () =&gt; createUser())
+     Retrieve a value                                                                                      Store.get(&quot;user&quot;)
+     Retrieve with fallback                                                                      Store.get(&quot;user&quot;, fallback)
+     Check whether a key exists                                                                            Store.has(&quot;user&quot;)
+     Delete a value                                                                                     Store.delete(&quot;user&quot;)
+     Remove all values                                                                                         Store.clear()
+     Retrieve all values                                                                                      Store.getAll()
+     Freeze further writes                                                                                    Store.freeze()
+
+     SUBSCRIPTIONS
+     Subscribe to changes on a specific key                                                      Store.subscribe(&quot;user&quot;, fn)
+     Subscribe to all store changes                                                                      Store.subscribe(fn)
+     Subscribe and receive the current value immediately                    Store.subscribe(&quot;user&quot;, fn, { immediate: true })
+     Observe changes through an async iterator                                                       Store.subscribe(&quot;user&quot;)
+     Observe with an immediate initial value                                    Store.subscribe(&quot;user&quot;, { immediate: true })
+     Unsubscribe all matching listeners                                                            Store.unsubscribeAll(fns)
+     Get subscribers registered for multiple keys                                    Store.subscribersOf([&quot;user&quot;, &quot;config&quot;])
+
+     WAITERS
+     Wait for the next matching value                                                               await Store.wait(&quot;user&quot;)
+     Wait for a change, ignoring the current value                                            await Store.waitChange(&quot;user&quot;)
+     Wait until a predicate is satisfied                                              await Store.waitFor(&quot;user&quot;, predicate)
+     Wait with a timeout                                                         await Store.wait(&quot;user&quot;, { timeout: 5000 })
+     Wait with an AbortSignal                                                           await Store.wait(&quot;user&quot;, { signal })
+
+     ATOMIC OPERATIONS
+     Set only when a key does not exist                                                      Store.setIfAbsent(&quot;user&quot;, user)
+     Set only when a key already exists                                                     Store.setIfPresent(&quot;user&quot;, user)
+     Replace an existing value                                                                   Store.replace(&quot;user&quot;, user)
+     Update using the previous value                                                            Store.update(&quot;count&quot;, fn, 0)
+     Increment a numeric value                                                                         Store.inc(&quot;count&quot;, 1)
+     Register a key without overwriting its value                                                        Store.touch(&quot;user&quot;)
+
+     COLLECTION / INSPECTION
+     Convert store to a plain object                                                                          Store.toJSON()
+     Retrieve entries                                                                                        Store.entries()
+     Retrieve keys                                                                                              Store.keys()
+     Retrieve values                                                                                          Store.values()
+     Find a value                                                                                      Store.find(predicate)
+     Find a matching key                                                                            Store.findKey(predicate)
+     Group values                                                                                            Store.group(fn)
+     Select specific keys                                                                                   Store.pick(keys)
+     Exclude specific keys                                                                                  Store.omit(keys)
+     Create a snapshot                                                                                      Store.snapshot()
+     Compare stores                                                                                      Store.equals(other)
+     Inspect subscription state                                                                         Store.snapshotSubs()
+     ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     Store.STATE                                                   Scoped state is organized by root → master → slave → key.
+
+     Retrieve a scoped state map                                                                        Store.state.getMap()
+     Retrieve a map using custom channels                                            Store.state.getMap(slave, master, root)
+     Retrieve scoped metadata                                                                      Store.state.getMetadata()
+     Read a state value                                                                                 Store.state.get(key)
+     Read using custom channels                                                                   Store.state.get(key, opts)
+     Write a state value                                                                         Store.state.set(key, value)
+     Write with notification options                                                       Store.state.set(key, value, opts)
+     Subscribe to a state key                                                           Store.state.subscribe(key, listener)
+     Check whether a state key exists                                                                   Store.state.has(key)
+     Delete a state key                                                                              Store.state.delete(key)
+     Retrieve scoped entries                                                                           Store.state.entries()
+     Clear scoped state                                                                                  Store.state.clear()
+     Schedule a key notification                                                                      Store.state._emit(key)
+
+     PERSISTENCE
+     Mark a state key for persistence                                                               Store.state.persist(key)
+     Remove a key from persistence                                                                Store.state.unpersist(key)
+     Clear persistent values                                                                   Store.state.clearPersistent()
+
+     Notification scheduling is cached and flushed through the Store&#x27;s
+     notification pipeline. State metadata also holds batching, history,
+     time-travel, listeners, waiters, contracts, conflicts and scope information.
+     ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     MAELSTROM
+
+     MODULE RESOLUTION
+     Dynamically import an ESM module                                                 await Store.maelstrom.module(&quot;module&quot;)
+     Resolve a module relative to the current module                                  Store.maelstrom.key_for(&quot;./module.js&quot;)
+     Synchronously require a module                                                Store.maelstrom.module.require(&quot;node:fs&quot;)
+     Check whether a module has loaded                                        Store.maelstrom.module.isLoaded(&quot;./module.js&quot;)
+     Retrieve a loaded module                                                Store.maelstrom.module.getLoaded(&quot;./module.js&quot;)
+     Extract a named export                                           Store.maelstrom.module.extract_named(ns, &quot;exportName&quot;)
+     Retrieve a named export                                                  Store.maelstrom.module.export_of(&quot;exportName&quot;)
+     Retrieve a named export from a specific module            Store.maelstrom.module.export_of(&quot;exportName&quot;, &quot;./module.js&quot;)
+     Load and resolve a named export                             Store.maelstrom.module.named_export(&quot;module&quot;, &quot;exportName&quot;)
+     Initialize module resolution                                                      Store.maelstrom.module.init(&quot;module&quot;)
+     Initialize a named export                              Store.maelstrom.module.init.named_export(&quot;module&quot;, &quot;exportName&quot;)
+     Check whether a module exists                                              await Store.maelstrom.module.check(&quot;module&quot;)
+     Index exports from a loaded module                                  Store.maelstrom.module.indexExports(rift, key, mod)
+
+     RIFT REGISTRY
+     Retrieve or create a Rift                                                         Store.maelstrom.rift(&quot;service.ready&quot;)
+     Create a Rift directly                                                                      Store.maelstrom.rift.make()
+     Check whether a Rift exists                                                   Store.maelstrom.rift.has(&quot;service.ready&quot;)
+     Inspect registered Rifts                                                                 Store.maelstrom.rift.inspect()
+     Clear the Rift registry                                                                    Store.maelstrom.rift.clear()
+     Read a Rift value                                                            Store.maelstrom.rift.read(&quot;service.ready&quot;)
+     Reset a Rift                                                                Store.maelstrom.rift.reset(&quot;service.ready&quot;)
+     Delete a Rift                                                              Store.maelstrom.rift.delete(&quot;service.ready&quot;)
+     Wait for a Rift                                                      await Store.maelstrom.rift(&quot;service.ready&quot;).wait()
+     Guard execution behind a Rift                                           Store.maelstrom.rift.guard(&quot;service.ready&quot;, fn)
+     Resolve a global Rift                              Store.maelstrom.rift.resolve.global(&quot;service.ready&quot;, timeout, value)
+
+     RIFT RESOLUTION
+     Retrieve or resolve a module through a Rift                                         Store.maelstrom.rift.use(&quot;service&quot;)
+     Create a Rift from a supplied value                                       Store.maelstrom.rift.create(&quot;service&quot;, value)
+     Read a Rift value                                                                  Store.maelstrom.rift.read(&quot;service&quot;)
+     Resolve an existing or claimed Rift                                      Store.maelstrom.rift.resolve.global(&quot;service&quot;)
+     Resolve a module with a fallback                      Store.maelstrom.rift.resolve.global(&quot;service&quot;, timeout, fallback)
+     Probe a named export with a synchs fallback    Store.maelstrom.rift.probe(&quot;service&quot;, &quot;./module.js&quot;, &quot;export&quot;, fallback)
+     Probe a named export w/o blocking   Store.maelstrom.rift.use_if_available(&quot;service&quot;, &quot;./module.js&quot;, &quot;export&quot;, fallback)
+     Conjure a module through the Rift resolver                                        Store.maelstrom.rift.conjure(options)
+     Conjure without caching                                                  Store.maelstrom.rift.conjure.uncached(options)
+     Retrieve a module Rift                                                       Store.maelstrom.rift.conjure.get(&quot;module&quot;)
+
+     RESULTS
+     Retrieve all recorded results                                                                   Store.maelstrom.results
+     Retrieve the number of registered Rifts                                                            Store.maelstrom.size
+     Retrieve a specific result                                                       Store.maelstrom.rift.result(&quot;service&quot;)
+     Filter results by solver                                                     Store.maelstrom.rift.resultsFrom(&quot;solver&quot;)
+     Subscribe to recorded results                                                         Store.maelstrom.rift.onResult(fn)
+     Record a resolution outcome                                                Store.maelstrom.record(label, solver, value)
+
+     WAITERS
+     Wait for one or more readiness signals                                               Store.maelstrom.waiter(&quot;auth&quot;, fn)
+     Wait for multiple signals                                                Store.maelstrom.waiter([&quot;auth&quot;, &quot;config&quot;], fn)
+     Cancel a multi-signal waiter                                                          Store.maelstrom.waiter.cancel(id)
+     Wait for a Rift through a Promise                Store.maelstrom.waiter.wait_and_promise(timeout, key, isOpen, current)
+
+     DEFER
+     Schedule execution when dependencies become available                                Store.maelstrom.defer(&quot;cache&quot;, fn)
+     Schedule execution after multiple dependencies                           Store.maelstrom.defer([&quot;cache&quot;, &quot;logger&quot;], fn)
+     Provide a dependency                                              Store.maelstrom.defer.provide(&quot;cache&quot;, cacheInstance)
+     Provide multiple dependencies                                          Store.maelstrom.defer.provide({ cache, logger })
+     Resolve a dependency without a value                                     Store.maelstrom.defer.resolve(&quot;service.ready&quot;)
+     Invalidate a dependency                                               Store.maelstrom.defer.invalidate(&quot;service.ready&quot;)
+     Check whether a dependency is available                                              Store.maelstrom.defer.has(&quot;cache&quot;)
+     Retrieve a dependency                                                                Store.maelstrom.defer.get(&quot;cache&quot;)
+     Check whether a task&#x27;s dependencies are ready                                         Store.maelstrom.defer.ready(task)
+     Cancel a pending task                                                                  Store.maelstrom.defer.cancel(id)
+     Inspect pending/running tasks and scheduler statistics                                  Store.maelstrom.defer.inspect()
+     Clear pending tasks                                                                       Store.maelstrom.defer.clear()
+     Drain the scheduler                                                                       Store.maelstrom.defer.drain()
+
+     ENVIRONMENT DETECTION
+     Detect runtime and available modules                                               Store.maelstrom.detect.environment()
+     Detect a specific module                                                  Store.maelstrom.detect.firstMatch(candidates)
+     Detect all available modules                                                     Store.maelstrom.detect.all(candidates)
+     Detect a runtime capability                                          Store.maelstrom.detect.capability(&quot;shared_worker&quot;)
+     Detect the package manager                                                             Store.maelstrom.detect.bundler()
+     Inspect environment state                                                                 Store.maelstrom.useEnvState()
+     APPARATION
+     Create a generic array                                                       Store.maelstrom.apparation.array&lt;string&gt;()
+     Create a generic object                                                     Store.maelstrom.apparation.object&lt;MyType&gt;()
+     Create a generic Map                                                   Store.maelstrom.apparation.map&lt;string, number&gt;()
+     Create a generic Set                                                           Store.maelstrom.apparation.set&lt;string&gt;()
+     Create a generic Promise                                                   Store.maelstrom.apparation.promise&lt;MyType&gt;()
+     Create a generic function                                                     Store.maelstrom.apparation.func&lt;MyType&gt;()
+     Create a generic WeakMap                                           Store.maelstrom.apparation.weakMap&lt;object, MyType&gt;()
+     Create a generic async iterable                                      Store.maelstrom.apparation.asyncIterable&lt;MyType&gt;()
+     Create a generic typed array                                        Store.maelstrom.apparation.typedArray&lt;Uint8Array&gt;()
+     Create a generic value placeholder                                             Store.maelstrom.apparation.any&lt;MyType&gt;()
+
+     RESET / LOGGING
+     Log a MAELSTROM event                                                               Store.maelstrom.log(&quot;AREA&quot;, detail)
+     Reset MAELSTROM registries, tasks and environment state                                         Store.maelstrom.reset()
+	======================================================================== ⇦✦──⇦✦──✦──✦──← &#x27;pew pew&#x27; 🧙 [Store/MAELSTROM] */</span>
+</code></pre>
+<h2 id="maelstrom-quick-reference">Maelstrom quick reference</h2>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Description</th>
+<th>If you need to…</th>
+<th>Use</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>key</code></td>
-<td>Changed key</td>
+<td>Load a module, allowing dynamic import as a fallback</td>
+<td><code>maelstrom.module()</code></td>
+<td><code>await store.maelstrom.module(&quot;some-package&quot;)</code></td>
 </tr>
 <tr>
-<td><code>value</code></td>
-<td>New value, or <code>undefined</code> on deletion</td>
+<td>Load a module synchronously with <code>require</code></td>
+<td><code>maelstrom.module.require()</code></td>
+<td><code>store.maelstrom.module.require(&quot;node:fs&quot;)</code></td>
 </tr>
 <tr>
-<td><code>prev</code></td>
-<td>Previous value</td>
+<td>Check whether a module is installed</td>
+<td><code>maelstrom.module.check()</code></td>
+<td><code>await store.maelstrom.module.check(&quot;optional-package&quot;)</code></td>
+</tr>
+<tr>
+<td>Reuse a previously loaded module</td>
+<td><code>maelstrom.module.isLoaded()</code> / <code>getLoaded()</code></td>
+<td><code>store.maelstrom.module.getLoaded(&quot;./client.js&quot;)</code></td>
+</tr>
+<tr>
+<td>Find a named export in loaded modules</td>
+<td><code>maelstrom.module.export_of()</code></td>
+<td><code>store.maelstrom.module.export_of(&quot;createClient&quot;)</code></td>
+</tr>
+<tr>
+<td>Import a named export from one module</td>
+<td><code>maelstrom.module.named_export()</code></td>
+<td><code>store.maelstrom.module.named_export(&quot;./client.js&quot;, &quot;createClient&quot;)</code></td>
+</tr>
+<tr>
+<td>Resolve a path relative to this module</td>
+<td><code>maelstrom.key_for()</code></td>
+<td><code>store.maelstrom.key_for(&quot;./config.js&quot;)</code></td>
+</tr>
+<tr>
+<td>Return a fallback immediately while probing for an export</td>
+<td><code>maelstrom.rift.probe()</code></td>
+<td><code>store.maelstrom.rift.probe(&quot;client&quot;, &quot;./client.js&quot;, &quot;createClient&quot;, fallback)</code></td>
+</tr>
+<tr>
+<td>Load an optional dependency with caching and a fallback</td>
+<td><code>maelstrom.rift.conjure()</code></td>
+<td><code>store.maelstrom.rift.conjure({ moduleName: &quot;optional-package&quot;, fallback })</code></td>
+</tr>
+<tr>
+<td>Create or retrieve a readiness signal</td>
+<td><code>maelstrom.rift()</code></td>
+<td><code>store.maelstrom.rift(&quot;db.ready&quot;)</code></td>
+</tr>
+<tr>
+<td>Open a readiness signal with a value</td>
+<td><code>maelstrom.rift.create()</code> or <code>maelstrom.rift.place()</code></td>
+<td><code>store.maelstrom.rift.create(&quot;db.ready&quot;, db)</code></td>
+</tr>
+<tr>
+<td>Wait for a signal to open</td>
+<td><code>rift.wait()</code></td>
+<td><code>await store.maelstrom.rift(&quot;db.ready&quot;).wait()</code></td>
+</tr>
+<tr>
+<td>Wait for multiple signals before running code</td>
+<td><code>maelstrom.waiter()</code></td>
+<td><code>store.maelstrom.waiter([&quot;db.ready&quot;, &quot;auth.ready&quot;], startApp)</code></td>
+</tr>
+<tr>
+<td>Run work once dependencies are available</td>
+<td><code>maelstrom.defer()</code></td>
+<td><code>store.maelstrom.defer([&quot;cache&quot;, &quot;logger&quot;], startService)</code></td>
+</tr>
+<tr>
+<td>Provide one or more deferred dependencies</td>
+<td><code>maelstrom.defer.provide()</code></td>
+<td><code>store.maelstrom.defer.provide({ cache, logger })</code></td>
+</tr>
+<tr>
+<td>Mark a dependency ready without a value</td>
+<td><code>maelstrom.defer.resolve()</code></td>
+<td><code>store.maelstrom.defer.resolve(&quot;service.ready&quot;)</code></td>
+</tr>
+<tr>
+<td>Inspect or cancel deferred work</td>
+<td><code>maelstrom.defer.inspect()</code> / <code>cancel()</code></td>
+<td><code>store.maelstrom.defer.inspect()</code></td>
+</tr>
+<tr>
+<td>Detect runtime capabilities</td>
+<td><code>maelstrom.detect.capability()</code></td>
+<td><code>store.maelstrom.detect.capability(&quot;shared_worker&quot;)</code></td>
+</tr>
+<tr>
+<td>Find installed platforms, compilers, or adapters</td>
+<td><code>maelstrom.detect.environment()</code></td>
+<td><code>store.maelstrom.detect.environment()</code></td>
+</tr>
+<tr>
+<td>Read detected environment information</td>
+<td><code>maelstrom.useEnvState()</code></td>
+<td><code>const env = store.maelstrom.useEnvState()</code></td>
+</tr>
+<tr>
+<td>Supply a safe placeholder for an unavailable module</td>
+<td><code>maelstrom.createSafeProxy()</code></td>
+<td><code>const fallback = store.maelstrom.createSafeProxy()</code></td>
+</tr>
+<tr>
+<td>Create an empty value with a particular type</td>
+<td><code>maelstrom.apparation.*()</code></td>
+<td><code>store.maelstrom.apparation.map&lt;string, number&gt;()</code></td>
+</tr>
+<tr>
+<td>Review recorded resolution outcomes</td>
+<td><code>maelstrom.results</code> / <code>rift.result()</code></td>
+<td><code>store.maelstrom.rift.result(&quot;db.ready&quot;)</code></td>
+</tr>
+<tr>
+<td>Listen for recorded outcomes</td>
+<td><code>maelstrom.rift.onResult()</code></td>
+<td><code>store.maelstrom.rift.onResult(console.log)</code></td>
+</tr>
+<tr>
+<td>Log a diagnostic event</td>
+<td><code>maelstrom.log()</code></td>
+<td><code>store.maelstrom.log(&quot;MODULE&quot;, { name }, &quot;warn&quot;)</code></td>
+</tr>
+<tr>
+<td>Clear Maelstrom coordination state</td>
+<td><code>maelstrom.reset()</code></td>
+<td><code>store.maelstrom.reset()</code></td>
 </tr>
 </tbody>
 </table>
-<p>Setting a key notifies subscribers even if the new value is equal to the previous value. Deleting a nonexistent key produces no notification.</p>
-<p>Subscriber callbacks are invoked safely: if one throws, the error is reported through <code>process.emitWarning()</code> and notification can continue to other subscribers.</p>
-<h2 id="ttl-behavior">TTL behavior</h2>
-<p>TTL is configured per write.</p>
-<pre><code>store.set('session', { userId: 42 }, {
-  ttl: 30 * 60 * 1000
-});
-</code></pre>
-<p>Writing to a key with an existing TTL clears its previous timer. A new TTL is installed only when a truthy <code>ttl</code> is provided.</p>
-<p>When a TTL expires, the store deletes the key and notifies subscribers if the key still exists.</p>
-<p>TTL timers use <code>unref()</code>, so they do not independently keep the Node.js process alive.</p>
-<h2 id="example-coordinating-asynchronous-work">Example: Coordinating asynchronous work</h2>
-<pre><code>const store = require('./store');
-
-async function waitForConnection() {
-  return store.waitFor(
-    'connection',
-    value =&gt; value === 'connected',
-    { timeout: 10_000 }
-  );
-}
-
-async function start() {
-  const connection = await waitForConnection();
-
-  console.log('Connection state:', connection);
-}
-
-start().catch(console.error);
-
-// Elsewhere in the application:
-store.set('connection', 'connected');
-</code></pre>
-<p>This allows independent parts of an application to coordinate through shared state without repeatedly polling for updates.</p>
-<h2 id="design-notes">Design notes</h2>
-<ul>
-<li><strong>In-memory only:</strong> Values are not persisted across process restarts.</li>
-<li><strong>Singleton by default:</strong> Modules importing the default export share the same store instance.</li>
-<li><strong>Independent instances:</strong> Use <code>new Store()</code> when isolated state is required.</li>
-<li><strong>Key identity:</strong> The underlying <code>Map</code> supports arbitrary key types, although some method signatures use strings for convenience.</li>
-<li><strong>No equality filtering:</strong> Writes trigger notifications even when values have not changed.</li>
-<li><strong>TTL scope:</strong> Expiration is managed per key and is not a general-purpose scheduling system.</li>
-</ul>
-<h2 id="license">License</h2>
-<p>Add the license applicable to your project.</p>
-<p>Clarify the CommonJS Export ShapeDocument Clear and Freeze Return Values</p>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             

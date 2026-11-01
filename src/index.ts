@@ -147,7 +147,14 @@
      Wait for a Rift through a Promise                STORE.maelstrom.waiter.wait_and_promise(timeout, key, isOpen, current)
 
      DEFER
-     Schedule execution when dependencies become available                                STORE.maelstrom.defer("cache", fn)
+     Schedule execution when dependencies become available  
+
+     Store.defer.run("kvdb", (a: A) => {
+        this.MODULES = new MODULES(kvdb);
+     });
+
+     Store.defer.provide("kvdb", kvdb);
+    
      Schedule execution after multiple dependencies                           STORE.maelstrom.defer(["cache", "logger"], fn)
      Provide a dependency                                              STORE.maelstrom.defer.provide("cache", cacheInstance)
      Provide multiple dependencies                                          STORE.maelstrom.defer.provide({ cache, logger })
