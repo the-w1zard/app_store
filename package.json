@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@the-w1zard/alias_types": "file:F:/the_wizard_mods/the-w1zard-alias_types-1.0.0.tgz",
-        "@the-w1zard/dx": "file:F:/the_wizard_mods/the-w1zard-dx-1.0.6.tgz"
+        "@the-w1zard/dx": "file:F:/the_wizard_mods/the-w1zard-dx-1.0.6.tgz",
+        "@the-w1zard/types": "file:F:/the_wizard_mods/the-w1zard-types-1.0.0.tgz"
     }
 }
