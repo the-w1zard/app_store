@@ -1,6 +1,6 @@
 {
     "name": "@the-w1zard/app_store",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "sideEffects": false,
     "type": "module",
     "main": "./dist/index.js",
@@ -23,6 +23,6 @@
     },
     "dependencies": {
         "@the-w1zard/alias_types": "file:F:/the_wizard_mods/the-w1zard-alias_types-1.0.0.tgz",
-        "@the-w1zard/dx": "file:F:/the_wizard_mods/the-w1zard-dx-1.0.6.tgz" 
+        "@the-w1zard/dx": "file:F:/the_wizard_mods/the-w1zard-dx-1.0.6.tgz"
     }
 }
