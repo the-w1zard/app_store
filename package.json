@@ -3,14 +3,15 @@
     "version": "1.0.3",
     "sideEffects": false,
     "type": "module",
-    "main": "./dist/index.js",
+    "main": "./src/index.ts",
     "exports": {
         ".": {
-            "default": "./dist/index.js"
+            "default": "./src/index.ts",
+            "types": "./src/index.d.ts"
         }
     },
     "files": [
-        "dist"
+        "src"
     ],
     "scripts": {
         "build": "tsc",
@@ -22,8 +23,7 @@
         "typescript": "^6.0.0"
     },
     "dependencies": {
-        "@the-w1zard/alias_types": "file:F:/the_wizard_mods/the-w1zard-alias_types-1.0.0.tgz",
-        "@the-w1zard/dx": "file:F:/the_wizard_mods/the-w1zard-dx-1.0.6.tgz",
-        "@the-w1zard/types": "file:F:/the_wizard_mods/the-w1zard-types-1.0.0.tgz"
+        "@the-w1zard/alias_types": "https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz",
+        "@the-w1zard/dx": "https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz"
     }
 }

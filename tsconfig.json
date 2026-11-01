@@ -15,6 +15,7 @@
 		"forceConsistentCasingInFileNames": true,
     "types":[
      "node",
+     "./src/index.d.ts",
      "@the-w1zard/dx",
      "@the-w1zard/alias_types"
     ]
