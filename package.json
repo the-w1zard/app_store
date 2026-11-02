@@ -1,5 +1,5 @@
 {
-    "name": "@the-w1zard/app_store",
+    "name": "@the-w1zard/store",
     "version": "1.0.4",
     "sideEffects": false,
     "type": "module",
@@ -23,7 +23,7 @@
         "typescript": "^6.0.0"
     },
     "dependencies": {
-        "@the-w1zard/alias_types": "https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz",
-        "@the-w1zard/dx": "https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz"
+        "@the-w1zard/alias_types": "^1.0.2",
+        "@the-w1zard/dx": "^1.0.8"
     }
 }

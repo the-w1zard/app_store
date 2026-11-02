@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@the-w1zard/alias_types':
-        specifier: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz
-        version: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz
+        specifier: ^1.0.2
+        version: 1.0.2
       '@the-w1zard/dx':
-        specifier: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz
-        version: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz
+        specifier: ^1.0.8
+        version: 1.0.8
     devDependencies:
       '@tsconfig/node-lts':
         specifier: ^24.0.0
@@ -27,17 +27,11 @@ importers:
 
 packages:
 
-  '@the-w1zard/alias_types@file:../alias_types/the-w1zard-alias_types-1.0.0.tgz':
-    resolution: {integrity: sha512-aGwaEfrA21gjzMyD59BBK0+jB9eoRxW6/DIwOxkFpTjtla+gvxsOisGXDVLipul3DC9vIBwalCcI5JJnrGbfMg==, tarball: file:../alias_types/the-w1zard-alias_types-1.0.0.tgz}
-    version: 1.0.0
+  '@the-w1zard/alias_types@1.0.2':
+    resolution: {integrity: sha512-e67l+UWJbHsr6EGu6jaFqjCGC43wd2Q5DESQZNgOf1UqGM1kcYCVua+pojvTUcQE2OLE/JflSHAbujCswqeZCg==}
 
-  '@the-w1zard/alias_types@https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz':
-    resolution: {tarball: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz}
-    version: 1.0.0
-
-  '@the-w1zard/dx@https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz':
-    resolution: {tarball: https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz}
-    version: 1.0.6
+  '@the-w1zard/dx@1.0.8':
+    resolution: {integrity: sha512-1RCm2QfKecXZn9oGTSQV2JMkNwuVsM3m+xEI22soeumFoSpB0Tlm/XtMP5Kmqutk+nTamje41InQc9z14QHMlg==}
 
   '@tsconfig/node-lts@24.0.1':
     resolution: {integrity: sha512-xo+1KtV5zVb90fyyeglG1n5cqg3cQXLlCkEpLptYlZUNk28xmwhuD5GmxoXwmrVtUTvaMyclun9kAd0TK7H+Pg==}
@@ -55,13 +49,11 @@ packages:
 
 snapshots:
 
-  '@the-w1zard/alias_types@file:../alias_types/the-w1zard-alias_types-1.0.0.tgz': {}
+  '@the-w1zard/alias_types@1.0.2': {}
 
-  '@the-w1zard/alias_types@https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-alias_types-1.0.0.tgz': {}
-
-  '@the-w1zard/dx@https://raw.githubusercontent.com/the-w1zard/.github/refs/heads/main/libraries/the-w1zard-dx-1.0.6.tgz':
+  '@the-w1zard/dx@1.0.8':
     dependencies:
-      '@the-w1zard/alias_types': file:../alias_types/the-w1zard-alias_types-1.0.0.tgz
+      '@the-w1zard/alias_types': 1.0.2
 
   '@tsconfig/node-lts@24.0.1': {}
 
