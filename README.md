@@ -65,6 +65,8 @@
 >   - conjure
 >   - conjure named exports
 >   - conjure cached and uncached
+> 
+> THE MAIN GOAL, is having a small but capable fn where the same instance/store can be accessed from different node / locally sourced modules. The end result is a single file that places a reactive and powerful surface area that agressively addressees several problems at once while keeping each of them sepearated, despite everything being accessible via a single call definition.
 
 </span>
 
@@ -73,7 +75,7 @@ A single in-process module for keyed storage, scoped state, readiness signals, m
 It exports a `Store` class for independent instances and a default, ready-to-use store:
 
 ```ts
-import store, { Store } from "./store.js";
+import Store, { Store } from "@the-w1zard/store";
 
 const isolatedStore = new Store();
 ```
