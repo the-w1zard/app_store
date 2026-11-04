@@ -15,9 +15,9 @@
 		"forceConsistentCasingInFileNames": true,
     "types":[
      "node",
-     "./src/index.d.ts",
      "@the-w1zard/dx",
-     "@the-w1zard/alias_types"
+     "@the-w1zard/alias_types",
+     "./src/index.d.ts"
     ]
   }, 
 		"include": [
