@@ -299,6 +299,7 @@ export const rv = <T>(v: UF<T>): T => typeof v === "function" ? (v as () => T)()
 //                                                                                               [STORE]
 // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
 const { EventEmitter } = require("node:events");
+type FlushCallback = () => V;
 
 class Store extends EventEmitter {
 	//                                                                                           [CONSTANTS]
@@ -318,7 +319,7 @@ class Store extends EventEmitter {
 	// #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
 	public _globalNotifyCache = new WeakMap<A, Map<A, () => V>>();
 	public _notifyCache = new WeakMap<Map<A, Set<(value: A) => V>>, Map<A, () => V>>();
-	public state = {
+    public state = {
 		getMap: <K, V>(slave: A = this.s, master: A = this.m, rk: A = this.r): M2<K, V> => {
 			let root = this.#context.get(rk); // (globalThis as any)[rk]  //  ; (globalThis as any)[rk] = root;
 			if (!root) {
@@ -343,7 +344,7 @@ class Store extends EventEmitter {
 			let root = this.#meta.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
 			if (!root) {
 				root = new M2<A, M2I<A, M2I<A, A>>>();
-				(globalThis as A)[r] = root;
+				this.#meta.set(r, root);
 			}
 	
 			let masterMap = root.get(m);
@@ -384,7 +385,7 @@ class Store extends EventEmitter {
 		},
 		get: <T = A,>(key: A, opts: A = { sl_reg: this.s, ms_reg: this.m, globalKey: this.r }): T | UD => {
 			const { sl_reg, ms_reg, globalKey } = opts;
-			const _state = this.getMap(sl_reg, ms_reg, globalKey);
+			const _state = this.state.getMap(sl_reg, ms_reg, globalKey);
 			const _persistent = this.state.getMap<A, A>(`${sl_reg}_PERSISTENT`, ms_reg, globalKey);
 			const _persistKeys = this.state.getMap<A, B>(`${sl_reg}_PERSIST_KEYS`, ms_reg, globalKey);
 
@@ -423,7 +424,7 @@ class Store extends EventEmitter {
 			}
 			_state.set(key, next);
 			if (_persistKeys.has(key)) _persistent.set(key, next);
-			if (triggerRender) this.state.scheduleGlobalNotify(key, this.getMetadata(sl_reg, ms_reg, globalKey), opts);
+			if (triggerRender) this.state.scheduleGlobalNotify(key, this.state.getMetadata(sl_reg, ms_reg, globalKey), opts);
 			if (triggerRender) this.state.scheduleNotify(key, _listeners, _state);
 			return MaybePromise(next as T);
 		},
@@ -528,7 +529,7 @@ class Store extends EventEmitter {
 			if (!fn) {
 				fn = () => {
 					cache!.delete(key);
-					const finalVal = this.store.get(key, opts);
+					const finalVal = this.state.get(key, opts);
 					const waiters = meta._waiters.get(key);
 					if (waiters) {
 						for (const resolveFn of waiters) {
@@ -553,6 +554,30 @@ class Store extends EventEmitter {
 			this.onFlush(fn);
 		},
 	};
+	public onFlush(cb: FlushCallback): void {
+		this.dirty.add(cb);
+		this.scheduleDrain();
+	}
+	public scheduleDrain(): void {
+		if (this._flushScheduled) return;
+		this._flushScheduled = true;
+		queueMicrotask(this.drain);
+	}
+	public drain(): void {
+		this._flushScheduled = false;
+		if (this.dirty.size === 0) return;
+
+		// An explicit openBatch() scope is still open (deliberately spanning an await) —
+		// don't drop the pending callbacks, just wait for closeBatch() to let them through.
+		if (this.openScopes.size > 0) {
+			this.scheduleDrain();
+			return;
+		}
+
+		const callbacks = this.dirty;
+		this.dirty = new Set();
+		for (const cb of callbacks) cb();
+	}
 	// #endregion
 
 	//                                                                                                 [SET]

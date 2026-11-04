@@ -337,7 +337,7 @@ class Store extends EventEmitter {
             let root = this.#meta.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
             if (!root) {
                 root = new M2();
-                globalThis[r] = root;
+                this.#meta.set(r, root);
             }
             let masterMap = root.get(m);
             if (!masterMap) {
@@ -376,7 +376,7 @@ class Store extends EventEmitter {
         },
         get: (key, opts = { sl_reg: this.s, ms_reg: this.m, globalKey: this.r }) => {
             const { sl_reg, ms_reg, globalKey } = opts;
-            const _state = this.getMap(sl_reg, ms_reg, globalKey);
+            const _state = this.state.getMap(sl_reg, ms_reg, globalKey);
             const _persistent = this.state.getMap(`${sl_reg}_PERSISTENT`, ms_reg, globalKey);
             const _persistKeys = this.state.getMap(`${sl_reg}_PERSIST_KEYS`, ms_reg, globalKey);
             // recordDependency(key)
@@ -419,7 +419,7 @@ class Store extends EventEmitter {
             if (_persistKeys.has(key))
                 _persistent.set(key, next);
             if (triggerRender)
-                this.state.scheduleGlobalNotify(key, this.getMetadata(sl_reg, ms_reg, globalKey), opts);
+                this.state.scheduleGlobalNotify(key, this.state.getMetadata(sl_reg, ms_reg, globalKey), opts);
             if (triggerRender)
                 this.state.scheduleNotify(key, _listeners, _state);
             return MaybePromise(next);
@@ -524,7 +524,7 @@ class Store extends EventEmitter {
             if (!fn) {
                 fn = () => {
                     cache.delete(key);
-                    const finalVal = this.store.get(key, opts);
+                    const finalVal = this.state.get(key, opts);
                     const waiters = meta._waiters.get(key);
                     if (waiters) {
                         for (const resolveFn of waiters) {
@@ -551,6 +551,31 @@ class Store extends EventEmitter {
             this.onFlush(fn);
         },
     };
+    onFlush(cb) {
+        this.dirty.add(cb);
+        this.scheduleDrain();
+    }
+    scheduleDrain() {
+        if (this._flushScheduled)
+            return;
+        this._flushScheduled = true;
+        queueMicrotask(this.drain);
+    }
+    drain() {
+        this._flushScheduled = false;
+        if (this.dirty.size === 0)
+            return;
+        // An explicit openBatch() scope is still open (deliberately spanning an await) —
+        // don't drop the pending callbacks, just wait for closeBatch() to let them through.
+        if (this.openScopes.size > 0) {
+            this.scheduleDrain();
+            return;
+        }
+        const callbacks = this.dirty;
+        this.dirty = new Set();
+        for (const cb of callbacks)
+            cb();
+    }
     // #endregion
     //                                                                                                 [SET]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
