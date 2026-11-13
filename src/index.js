@@ -302,18 +302,18 @@ class Store extends EventEmitter {
     #waiters = new M2(); // { key, predicate, resolve, reject, timer }
     #data = new M2();
     #subs = new M2(); // key -> Set<fn>   (key-specific)
-    #anySubs = new SET2(); // global watchers
+    #any_subs = new SET2(); // global watchers
     #frozen = false;
     #context = new M2();
-    #meta = new M2();
-    r = "_root_k_";
-    m = "_master_k_";
-    s = "_slave_k_";
+    #meta_context = new M2();
+    #global_notify_context = new WeakMap();
+    #notify_context = new WeakMap();
+    r = "_root_";
+    m = "_master_";
+    s = "_slave_";
     // #endregion
     //                                                                                               [STATE]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
-    _globalNotifyCache = new WeakMap();
-    _notifyCache = new WeakMap();
     state = {
         getMap: (slave = this.s, master = this.m, rk = this.r) => {
             let root = this.#context.get(rk); // (globalThis as any)[rk]  //  ; (globalThis as any)[rk] = root;
@@ -334,10 +334,10 @@ class Store extends EventEmitter {
             return slaveMap;
         },
         getMetadata: (s = this.s, m = this.m, r = this.r) => {
-            let root = this.#meta.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
+            let root = this.#meta_context.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
             if (!root) {
                 root = new M2();
-                this.#meta.set(r, root);
+                this.#meta_context.set(r, root);
             }
             let masterMap = root.get(m);
             if (!masterMap) {
@@ -498,10 +498,10 @@ class Store extends EventEmitter {
             this.state.scheduleGlobalNotify(key, meta, opts);
         },
         scheduleNotify: (key, _listeners, _state) => {
-            let cache = this._notifyCache.get(_listeners);
+            let cache = this.#notify_context.get(_listeners);
             if (!cache) {
                 cache = new Map();
-                this._notifyCache.set(_listeners, cache);
+                this.#notify_context.set(_listeners, cache);
             }
             let fn = cache.get(key);
             if (!fn) {
@@ -515,10 +515,10 @@ class Store extends EventEmitter {
             this.onFlush(fn);
         },
         scheduleGlobalNotify: (key, meta, opts) => {
-            let cache = this._globalNotifyCache.get(meta);
+            let cache = this.#global_notify_context.get(meta);
             if (!cache) {
                 cache = new Map();
-                this._globalNotifyCache.set(meta, cache);
+                this.#global_notify_context.set(meta, cache);
             }
             let fn = cache.get(key);
             if (!fn) {
@@ -609,9 +609,9 @@ class Store extends EventEmitter {
         // global watcher
         if (typeof keyOrFn === "function") {
             const fn = keyOrFn;
-            this.#anySubs.add(fn);
+            this.#any_subs.add(fn);
             return () => {
-                this.#anySubs.delete(fn);
+                this.#any_subs.delete(fn);
             };
         }
         const key = keyOrFn;
@@ -640,7 +640,7 @@ class Store extends EventEmitter {
     unsubscribeAll(fns) {
         for (const set of this.#subs.values())
             set.deleteAll(fns);
-        this.#anySubs.deleteAll(fns);
+        this.#any_subs.deleteAll(fns);
     }
     subscribersOf(keys) {
         let out = new SET2();

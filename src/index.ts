@@ -273,7 +273,7 @@ class Rift<T = A> implements RiftLike<T> {
 //                                                                                               [USAGE]
 // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
 export const rv = <T>(v: UF<T>): T => typeof v === "function" ? (v as () => T)() : v;
- export const sameValue = (a: A, b: A): B =>    Object.is(a, b) || (a instanceof Date && b instanceof Date && +a === +b);
+export const sameValue = (a: A, b: A): B =>    Object.is(a, b) || (a instanceof Date && b instanceof Date && +a === +b);
  
 /*  ====================================================================================================
      const store = require('./store');
@@ -307,18 +307,19 @@ class Store extends EventEmitter {
 	#waiters = new M2<S, SET2<A>>(); // { key, predicate, resolve, reject, timer }
 	#data = new M2();
 	#subs = new M2(); // key -> Set<fn>   (key-specific)
-	#anySubs = new SET2(); // global watchers
+	#any_subs = new SET2(); // global watchers
 	#frozen = false;
+
 	#context = new M2();
-	#meta = new M2();
-	public r = "_root_k_";
-	public m = "_master_k_";
-	public s = "_slave_k_";
+	#meta_context = new M2();
+	#global_notify_context = new WeakMap<A, Map<A, () => V>>();
+	#notify_context = new WeakMap<Map<A, Set<(value: A) => V>>, Map<A, () => V>>();
+	public r = "_root_";
+	public m = "_master_";
+	public s = "_slave_";
 	// #endregion
 	//                                                                                               [STATE]
 	// #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
-	public _globalNotifyCache = new WeakMap<A, Map<A, () => V>>();
-	public _notifyCache = new WeakMap<Map<A, Set<(value: A) => V>>, Map<A, () => V>>();
     public state = {
 		getMap: <K, V>(slave: A = this.s, master: A = this.m, rk: A = this.r): M2<K, V> => {
 			let root = this.#context.get(rk); // (globalThis as any)[rk]  //  ; (globalThis as any)[rk] = root;
@@ -341,10 +342,10 @@ class Store extends EventEmitter {
 			return slaveMap;
 		},
 		getMetadata:(s = this.s, m = this.m, r = this.r) => {
-			let root = this.#meta.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
+			let root = this.#meta_context.get(r); //  (globalThis as A)[r]; // STATE_CONTEXT === "sauron" ?  : null;
 			if (!root) {
 				root = new M2<A, M2I<A, M2I<A, A>>>();
-				this.#meta.set(r, root);
+				this.#meta_context.set(r, root);
 			}
 	
 			let masterMap = root.get(m);
@@ -503,10 +504,10 @@ class Store extends EventEmitter {
 			this.state.scheduleGlobalNotify(key, meta, opts);
 		},
 		scheduleNotify: (key: A, _listeners: Map<A, Set<(value: A) => V>>, _state: Map<A, A>): V =>{
-			let cache = this._notifyCache.get(_listeners);
+			let cache = this.#notify_context.get(_listeners);
 			if (!cache) {
 				cache = new Map();
-				this._notifyCache.set(_listeners, cache);
+				this.#notify_context.set(_listeners, cache);
 			}
 			let fn = cache.get(key);
 			if (!fn) {
@@ -520,10 +521,10 @@ class Store extends EventEmitter {
 			this.onFlush(fn);
 		},
 		scheduleGlobalNotify :(key: S | SY, meta: A, opts: A): V => {
-			let cache = this._globalNotifyCache.get(meta);
+			let cache = this.#global_notify_context.get(meta);
 			if (!cache) {
 				cache = new Map();
-				this._globalNotifyCache.set(meta, cache);
+				this.#global_notify_context.set(meta, cache);
 			}
 			let fn = cache.get(key);
 			if (!fn) {
@@ -620,9 +621,9 @@ class Store extends EventEmitter {
 		// global watcher
 		if (typeof keyOrFn === "function") {
 			const fn = keyOrFn;
-			this.#anySubs.add(fn);
+			this.#any_subs.add(fn);
 			return () => {
-				this.#anySubs.delete(fn);
+				this.#any_subs.delete(fn);
 			};
 		}
 		const key = keyOrFn;
@@ -649,7 +650,7 @@ class Store extends EventEmitter {
 	}
 	public unsubscribeAll(fns: Iterable<FN>) {
 		for (const set of this.#subs.values()) set.deleteAll(fns);
-		this.#anySubs.deleteAll(fns);
+		this.#any_subs.deleteAll(fns);
 	}
 	public subscribersOf(keys: S[]): A {
 		let out = new SET2<FN>();
