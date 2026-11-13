@@ -1,3 +1,5 @@
+/// <reference types="@the-w1zard/dx" />
+
 export {}
 
 declare global {
